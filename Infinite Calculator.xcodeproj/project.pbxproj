@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		F4E11C4B23F3A49E00F2D228 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F4E11C4A23F3A49E00F2D228 /* main.cpp */; };
+		F4E11C5223F3A4D500F2D228 /* operation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F4E11C5123F3A4D500F2D228 /* operation.cpp */; };
+		F4E11C5623F40C8400F2D228 /* io.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F4E11C5423F40C8400F2D228 /* io.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,10 @@
 /* Begin PBXFileReference section */
 		F4E11C4723F3A49E00F2D228 /* Infinite Calculator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Infinite Calculator"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4E11C4A23F3A49E00F2D228 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		F4E11C5123F3A4D500F2D228 /* operation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = operation.cpp; sourceTree = "<group>"; };
+		F4E11C5323F3A4DC00F2D228 /* operation.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = operation.hpp; sourceTree = "<group>"; };
+		F4E11C5423F40C8400F2D228 /* io.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = io.cpp; sourceTree = "<group>"; };
+		F4E11C5523F40C8400F2D228 /* io.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = io.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +63,11 @@
 		F4E11C4923F3A49E00F2D228 /* Infinite Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				F4E11C5323F3A4DC00F2D228 /* operation.hpp */,
+				F4E11C5123F3A4D500F2D228 /* operation.cpp */,
 				F4E11C4A23F3A49E00F2D228 /* main.cpp */,
+				F4E11C5423F40C8400F2D228 /* io.cpp */,
+				F4E11C5523F40C8400F2D228 /* io.hpp */,
 			);
 			path = "Infinite Calculator";
 			sourceTree = "<group>";
@@ -120,6 +130,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4E11C4B23F3A49E00F2D228 /* main.cpp in Sources */,
+				F4E11C5623F40C8400F2D228 /* io.cpp in Sources */,
+				F4E11C5223F3A4D500F2D228 /* operation.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,7 +144,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -180,7 +192,18 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-std=c++17",
+					"-pedantic-errors",
+				);
 				SDKROOT = macosx;
+				WARNING_CFLAGS = (
+					"-Wsign-conversion",
+					"-Weffc++",
+					"-Wall",
+					"-Wextra",
+				);
 			};
 			name = Debug;
 		};
@@ -190,7 +213,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -231,7 +254,18 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-std=c++17",
+					"-pedantic-errors",
+				);
 				SDKROOT = macosx;
+				WARNING_CFLAGS = (
+					"-Wsign-conversion",
+					"-Weffc++",
+					"-Wall",
+					"-Wextra",
+				);
 			};
 			name = Release;
 		};
