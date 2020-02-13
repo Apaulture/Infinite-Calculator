@@ -199,9 +199,7 @@
 				);
 				SDKROOT = macosx;
 				WARNING_CFLAGS = (
-					"-Wsign-conversion",
 					"-Weffc++",
-					"-Wall",
 					"-Wextra",
 				);
 			};
@@ -261,9 +259,7 @@
 				);
 				SDKROOT = macosx;
 				WARNING_CFLAGS = (
-					"-Wsign-conversion",
 					"-Weffc++",
-					"-Wall",
 					"-Wextra",
 				);
 			};

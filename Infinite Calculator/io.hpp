@@ -11,6 +11,6 @@
 
 #include <stdio.h>
 
-void processInput(char operation);
+int processInput(char operation);
 
 #endif /* io_hpp */

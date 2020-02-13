@@ -12,13 +12,14 @@
 int main()
 {
     bool containOperator{true}; // Condition to loop through program
-    int nonOperatorCount{};     // Count number of characters in user input which are operator-exclusive
     
-    std::cout << "* | / | + | -\n\n" << "> Exit program by entering anything but operators\n";
+    std::cout << "* | / | + | -\n\n" << "! Exit program by entering anything but operators\n";
     
     do
     {
-        std::cout << "Enter operator: ";
+        int nonOperatorCount{}; // Count number of characters in user input which are operator-exclusive
+        
+        std::cout << "> Enter operator: ";
         
         std::string userInput{};
         std::cin >> userInput;
@@ -30,30 +31,42 @@ int main()
             switch (userInput[i])
             {
                 case '*':
-                    processInput('*');
+                {
+                    int output{processInput('*')};
+                    std::cout << "! Result: " << output << '\n';
                     break;
+                }
                 case '/':
-                    processInput('/');
+                {
+                    int output{processInput('/')};
+                    std::cout << "! Result: " << output << '\n';
                     break;
+                }
                 case '+':
-                    processInput('+');
+                {
+                    int output{processInput('+')};
+                    std::cout << "! Result: " << output << '\n';
                     break;
+                }
                 case '-':
-                    processInput('-');
+                {
+                    int output{processInput('-')};
+                    std::cout << "! Result: " << output << '\n';
                     break;
+                }
                 // User input does is operation-exclusive
                 default:
                     nonOperatorCount++;
                     break;
             }
-            
-            // If user input do not contain any operators, end loop and exit program
-            if (nonOperatorCount == (int)userInput.length())
-            {
-                // No operators input
-                std::cout << "> Thank you for using Infinite Calculator\n";
-                containOperator = false;
-            }
+        }
+        
+        // If user input do not contain any operators, end loop and exit program
+        if (nonOperatorCount == (int)userInput.length())
+        {
+            // No operators input
+            std::cout << "> Thank you for using Infinite Calculator\n";
+            containOperator = false;
         }
     } while (containOperator);
     

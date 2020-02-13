@@ -9,28 +9,56 @@
 #include "io.hpp"
 #include "operation.hpp"
 #include <iostream>
+#include <vector>
 
-void processInput(char operation)
+int processInput(char operation)
 {
-    std::cout << "Enter operands: ";
+    std::cout << "> Enter operands separated by comma: ";
     
-    int firstNum{};
-    int secondNum{};
-    std::cin >> firstNum >> secondNum;
+    std::string input{};
+    std::cin >> input;
     
-    switch (operation)
+    size_t delimPos = 0;
+    std::string delim{","};
+    
+    int result{};
+    
+    int operand{};
+    std::vector<int> operands;
+    
+    while ((delimPos = input.find(delim)) != std::string::npos)
     {
-        case '*':
-            std::cout << firstNum << operation << secondNum << " = " << multiply(firstNum, secondNum) << '\n';
-            break;
-        case '/':
-            std::cout << firstNum << operation << secondNum << " = " << divide(firstNum, secondNum) << '\n';
-            break;
-        case '+':
-            std::cout << firstNum << operation << secondNum << " = " << add(firstNum, secondNum) << '\n';
-            break;
-        case '-':
-            std::cout << firstNum << operation << secondNum << " = " << minus(firstNum, secondNum) << '\n';
-            break;
+        operand = std::stoi(input.substr(0, delimPos)); // extract operand from user input
+        operands.push_back(operand); // append operand to operands vector/array
+        input.erase(0, delimPos + delim.length());
     }
+    
+    // perform operation here
+    size_t numOperands{operands.size()};
+    
+    operands.push_back(std::stoi(input)); // append final value to operands vector
+    result = operands[0];
+    
+    for (int i = 1; i <= numOperands; i++)
+    {
+        switch (operation)
+        {
+            case '*':
+                result *= operands[i];
+                break;
+            case '/':
+                result /= operands[i];
+                break;
+            case '+':
+                result += operands[i];
+                break;
+            case '-':
+                result -= operands[i];
+                break;
+        }
+    }
+    
+    
+    
+    return result;
 }
