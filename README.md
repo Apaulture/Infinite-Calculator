@@ -4,4 +4,5 @@ A multi-operation calculator program which processes a hypothetically infinite n
 Features:
 - Ignores non operators
 - Organic, non-GMO
+
 ![Screenshot](https://github.com/Apaulture/Infinite-Calculator/blob/master/ss.png)
