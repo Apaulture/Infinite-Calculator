@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F4E11C4B23F3A49E00F2D228 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F4E11C4A23F3A49E00F2D228 /* main.cpp */; };
-		F4E11C5223F3A4D500F2D228 /* operation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F4E11C5123F3A4D500F2D228 /* operation.cpp */; };
 		F4E11C5623F40C8400F2D228 /* io.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F4E11C5423F40C8400F2D228 /* io.cpp */; };
 /* End PBXBuildFile section */
 
@@ -27,8 +26,6 @@
 /* Begin PBXFileReference section */
 		F4E11C4723F3A49E00F2D228 /* Infinite Calculator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Infinite Calculator"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4E11C4A23F3A49E00F2D228 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		F4E11C5123F3A4D500F2D228 /* operation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = operation.cpp; sourceTree = "<group>"; };
-		F4E11C5323F3A4DC00F2D228 /* operation.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = operation.hpp; sourceTree = "<group>"; };
 		F4E11C5423F40C8400F2D228 /* io.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = io.cpp; sourceTree = "<group>"; };
 		F4E11C5523F40C8400F2D228 /* io.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = io.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,8 +60,6 @@
 		F4E11C4923F3A49E00F2D228 /* Infinite Calculator */ = {
 			isa = PBXGroup;
 			children = (
-				F4E11C5323F3A4DC00F2D228 /* operation.hpp */,
-				F4E11C5123F3A4D500F2D228 /* operation.cpp */,
 				F4E11C4A23F3A49E00F2D228 /* main.cpp */,
 				F4E11C5423F40C8400F2D228 /* io.cpp */,
 				F4E11C5523F40C8400F2D228 /* io.hpp */,
@@ -131,7 +126,6 @@
 			files = (
 				F4E11C4B23F3A49E00F2D228 /* main.cpp in Sources */,
 				F4E11C5623F40C8400F2D228 /* io.cpp in Sources */,
-				F4E11C5223F3A4D500F2D228 /* operation.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

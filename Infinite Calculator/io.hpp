@@ -9,8 +9,10 @@
 #ifndef io_hpp
 #define io_hpp
 
+#include <iostream>
 #include <stdio.h>
 
+std::string getInput(std::string input);
 int processInput(char operation);
 
 #endif /* io_hpp */

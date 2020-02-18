@@ -7,22 +7,33 @@
 //
 
 #include "io.hpp"
-#include "operation.hpp"
 #include <iostream>
 #include <vector>
 
+std::string getInput(std::string input)
+{
+    if (input == "operator")
+    {
+        std::cout << "> Enter operator: ";
+    }
+    else if (input == "operands")
+    {
+        std::cout << "> Enter operands separated by comma: ";
+    }
+    
+    std::string userInput{};
+    std::cin >> userInput;
+    
+    return userInput;
+}
+
 int processInput(char operation)
 {
-    std::cout << "> Enter operands separated by comma: ";
-    
-    std::string input{};
-    std::cin >> input;
-    
+    std::string input{getInput("operands")};
     size_t delimPos = 0;
     std::string delim{","};
     
     int result{};
-    
     int operand{};
     std::vector<int> operands;
     

@@ -11,24 +11,23 @@
 
 int main()
 {
-    bool containOperator{true}; // Condition to loop through program
+    // Condition to loop through program
+    bool containOperator{true};
     
-    std::cout << "* | / | + | -\n\n" << "! Exit program by entering anything but operators\n";
+    std::cout << "         *  |  /  |  +  |  -\n\n" << "! To exit, enter anything but operators\n";
     
+    // Loop through program here
     do
     {
         int nonOperatorCount{}; // Count number of characters in user input which are operator-exclusive
-        
-        std::cout << "> Enter operator: ";
-        
-        std::string userInput{};
-        std::cin >> userInput;
+        std::string userInput{getInput("operator")};
+        int inputLength{(int)userInput.length()}; // char length of user input
         
         // Cycle through user inputted string
-        for (int i = 0; i < (int)userInput.length(); i++)
+        for (int i = 1; i <= inputLength; i++)
         {
             // String to character conversion
-            switch (userInput[i])
+            switch (userInput[i - 1]) // check at index 0 by subtracting 1
             {
                 case '*':
                 {
@@ -59,10 +58,16 @@ int main()
                     nonOperatorCount++;
                     break;
             }
+            
+            // Condition becomes true when char in string is an operator
+            if (i != nonOperatorCount)
+            {
+                i = inputLength; // End loop by setting i to the input length
+            }
         }
         
         // If user input do not contain any operators, end loop and exit program
-        if (nonOperatorCount == (int)userInput.length())
+        if (nonOperatorCount == inputLength)
         {
             // No operators input
             std::cout << "> Thank you for using Infinite Calculator\n";
