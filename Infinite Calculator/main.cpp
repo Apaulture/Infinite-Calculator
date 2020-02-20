@@ -9,6 +9,7 @@
 #include "io.hpp"
 #include <iostream>
 
+
 int main()
 {
     // Condition to loop through program
@@ -31,25 +32,25 @@ int main()
             {
                 case '*':
                 {
-                    int output{processInput('*')};
+                    float output{processInput('*')};
                     std::cout << "! Result: " << output << '\n';
                     break;
                 }
                 case '/':
                 {
-                    int output{processInput('/')};
+                    float output{processInput('/')};
                     std::cout << "! Result: " << output << '\n';
                     break;
                 }
                 case '+':
                 {
-                    int output{processInput('+')};
+                    float output{processInput('+')};
                     std::cout << "! Result: " << output << '\n';
                     break;
                 }
                 case '-':
                 {
-                    int output{processInput('-')};
+                    float output{processInput('-')};
                     std::cout << "! Result: " << output << '\n';
                     break;
                 }

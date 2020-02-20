@@ -27,30 +27,30 @@ std::string getInput(std::string input)
     return userInput;
 }
 
-int processInput(char operation)
+float processInput(char operation)
 {
     std::string input{getInput("operands")};
-    size_t delimPos = 0;
     std::string delim{","};
+    std::vector<float> operands;
+    float operand{}; // extracted operand
+    float result{}; // current result
     
-    int result{};
-    int operand{};
-    std::vector<int> operands;
+    size_t delimPos{0};
     
     while ((delimPos = input.find(delim)) != std::string::npos)
     {
-        operand = std::stoi(input.substr(0, delimPos)); // extract operand from user input
+        operand = std::stof(input.substr(0, delimPos)); // extract operand from user input up to delimiter
         operands.push_back(operand); // append operand to operands vector/array
         input.erase(0, delimPos + delim.length());
     }
     
-    // perform operation here
-    size_t numOperands{operands.size()};
+    // number of operands extracted from user input
+    size_t numOperands{(operands.size())};
     
-    operands.push_back(std::stoi(input)); // append final value to operands vector
-    result = operands[0];
+    operands.push_back(std::stof(input)); // append final value to operands vector
+    result = operands[0]; // result is assigned the first extracted operand
     
-    for (int i = 1; i <= numOperands; i++)
+    for (int i = 1; i <= (int)numOperands; i++)
     {
         switch (operation)
         {
@@ -68,8 +68,6 @@ int processInput(char operation)
                 break;
         }
     }
-    
-    
     
     return result;
 }

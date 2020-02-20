@@ -13,6 +13,6 @@
 #include <stdio.h>
 
 std::string getInput(std::string input);
-int processInput(char operation);
+float processInput(char operation);
 
 #endif /* io_hpp */
